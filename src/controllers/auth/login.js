@@ -24,7 +24,7 @@ const login = async (req, res) => {
 
   const token = user.signToken();
 
-  res.status(StatusCodes.OK).json({ success: true, data: { token } });
+  res.status(StatusCodes.OK).json({ success: true, data: { token,user:user.name } });
 };
 
 module.exports = login;

@@ -11,7 +11,10 @@ const app = express();
 
 app.use(helmet());
 app.use(limiter);
-app.use(cors());
+app.use(cors({
+  origin: 'http://localhost:8081',  
+  credentials: true               
+}));
 app.use(express.json());
 
 app.use("/api/v1/", router);
